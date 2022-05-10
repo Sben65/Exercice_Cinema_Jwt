@@ -1,12 +1,20 @@
 version: '3.1'
+
 services:
+
   db:
     image: mysql
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
+    volumes:
+      - ./cinema_db.sql:/docker-entrypoint-initdb.d/cinema_db.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cinema_db_jwt
+    ports: 
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
     ports:
-      - "3307:3306"
-    volumes:
-      - $HOME/Desktop/MySQL-Snippets/cinema_db.sql:/cinema_db.sql
+      - 8080:8080

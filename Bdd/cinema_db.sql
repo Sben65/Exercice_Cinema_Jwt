@@ -1,7 +1,8 @@
 #------------------------------------------------------------
 # Table: Users
 #------------------------------------------------------------
-
+CREATE SCHEMA cinema;
+USE cinema;
 CREATE TABLE Users(
         id       Int  Auto_increment  NOT NULL ,
         username Varchar (100) NOT NULL ,
