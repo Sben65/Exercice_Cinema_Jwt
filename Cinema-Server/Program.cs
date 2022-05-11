@@ -49,8 +49,8 @@ builder.Services.AddAuthentication(opt =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "https://localhost:7118",
-        ValidAudience = "https://localhost:7118",
+        ValidIssuer = "https://localhost:7061",
+        ValidAudience = "https://localhost:7061",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ma cle secrete"))
     };
 });
