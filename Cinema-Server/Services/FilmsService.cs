@@ -1,5 +1,4 @@
-﻿using MongoDB.Driver;
-using Server.Cinema.Interfaces;
+﻿using Server.Cinema.Interfaces;
 using Server.Cinema.Models;
 using System;
 using System.Collections.Generic;

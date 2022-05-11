@@ -1,7 +1,12 @@
 using Cinema_Server.Models;
+using Cinema_Server.Repositories;
+using Cinema_Server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Server.Cinema.Interfaces;
+using Server.Cinema.Repositories;
+using Server.Cinema.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +17,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddEntityFrameworkMySql().AddDbContext<DatabaseContext>(options =>
+{
+    options.UseMySql(builder.Configuration.GetConnectionString("admin"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.6.5-mariadb"),
+        mySqlOptionsAction: mySqlOptions =>
+        {
+            mySqlOptions.EnableRetryOnFailure();
+        });
+});
 
 builder.Services.AddCors(options =>
 {
@@ -40,6 +54,20 @@ builder.Services.AddAuthentication(opt =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ma cle secrete"))
     };
 });
+
+// REPOSITORIES
+builder.Services.AddTransient<ICinemasRepository, CinemasRepository>();
+builder.Services.AddTransient<ISallesRepository, SallesRepository>();
+builder.Services.AddTransient<IFilmsRepository, FilmsRepository>();
+builder.Services.AddTransient<ISeancesRepository, SeancesRepository>();
+builder.Services.AddTransient<UsersRepository, UsersRepository>();
+
+// SERVICES
+builder.Services.AddTransient<UsersService, UsersService>();
+builder.Services.AddTransient<ICinemasService, CinemasService>();
+builder.Services.AddTransient<ISallesService, SallesService>();
+builder.Services.AddTransient<IFilmsService, FilmsService>();
+builder.Services.AddTransient<ISeancesService, SeancesService>();
 
 //Donot forgot to add ConnectionStrings as "dbConnection" to the appsetting.json file
 builder.Services.AddDbContext<DatabaseContext>

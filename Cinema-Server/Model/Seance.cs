@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,20 +7,16 @@ namespace Server.Cinema.Models
 {
     public class Seance
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
         public DateTime DateDebut { get; set; }
 
         public string SalleId { get; set; }
 
-        [BsonIgnore]
         public Salle Salle { get; set; }
 
         public string FilmId { get; set; }
 
-        [BsonIgnore]
         public Film Film { get; set; }
 
         public string CinemaId { get; set; }
