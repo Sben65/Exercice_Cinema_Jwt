@@ -1,5 +1,5 @@
-﻿using Server.Cinema.Interfaces;
-using Server.Cinema.Models;
+﻿using Cinema_Server.Models;
+using Server.Cinema.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +58,7 @@ namespace Server.Cinema.Services
         /// <returns>une seance.</returns>
         public Seance AddSeance(Seance seance)
         {
-            if (seance.CinemaId == null || seance.FilmId == null || seance.SalleId == null)
+            if (seance.Id == null || seance.Id == null || seance.Id == null)
             {
                 throw new ArgumentNullException();
             }
@@ -76,7 +76,7 @@ namespace Server.Cinema.Services
         /// <returns>Seance mis à jour.</returns>
         public Seance UpdateSeance(string id, Seance seance)
         {
-            if (seance.CinemaId == null || seance.FilmId == null || seance.SalleId == null)
+            if (seance.Id == null || seance.Id == null || seance.Id == null)
             {
                 throw new ArgumentNullException();
             }

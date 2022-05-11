@@ -1,13 +1,12 @@
 ﻿using Cinema_Server.Models;
-using Server.Cinema.Models;
 
 namespace Cinema_Server.Repositories
 {
     public class UsersRepository
     {
-        private readonly DatabaseContext context;
+        private readonly CinemajwtDatabaseContext context;
 
-        public UsersRepository(DatabaseContext context)
+        public UsersRepository(CinemajwtDatabaseContext context)
         {
             this.context = context;
         }

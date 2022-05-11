@@ -1,5 +1,5 @@
-﻿using Server.Cinema.Interfaces;
-using Server.Cinema.Models;
+﻿using Cinema_Server.Models;
+using Server.Cinema.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

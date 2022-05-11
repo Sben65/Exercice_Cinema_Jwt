@@ -7,10 +7,10 @@ namespace Server.Cinema.Interfaces
 {
     public interface ICinemasService
     {
-        List<Models.Cinema> GetAllCinema();
-        Models.Cinema GetCinemaById(string id);
-        Models.Cinema AddCinema(Models.Cinema cinema);
-        Models.Cinema UpdateCinema(string id, Models.Cinema cinema);
+        List<Cinema_Server.Models.Cinema> GetAllCinema();
+        Cinema_Server.Models.Cinema GetCinemaById(string id);
+        Cinema_Server.Models.Cinema AddCinema(Cinema_Server.Models.Cinema cinema);
+        Cinema_Server.Models.Cinema UpdateCinema(string id, Cinema_Server.Models.Cinema cinema);
         void DeleteCinema(string id);
     }
 }

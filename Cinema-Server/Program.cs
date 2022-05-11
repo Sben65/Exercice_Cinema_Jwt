@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddEntityFrameworkMySql().AddDbContext<DatabaseContext>(options =>
+builder.Services.AddEntityFrameworkMySql().AddDbContext<CinemajwtDatabaseContext>(options =>
 {
     options.UseMySql(builder.Configuration.GetConnectionString("admin"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.6.5-mariadb"),
         mySqlOptionsAction: mySqlOptions =>
@@ -70,8 +70,8 @@ builder.Services.AddTransient<IFilmsService, FilmsService>();
 builder.Services.AddTransient<ISeancesService, SeancesService>();
 
 //Donot forgot to add ConnectionStrings as "dbConnection" to the appsetting.json file
-builder.Services.AddDbContext<DatabaseContext>
-    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("dbConnection")));
+//builder.Services.AddDbContext<DatabaseContext>
+//    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("admin")));
 
 var app = builder.Build();
 

@@ -12,78 +12,78 @@ namespace Server.Cinema.Controllers
     [ApiController]
     public class CinemasController : ControllerBase
     {
-        private readonly ICinemasService cinemasService;
+        //private readonly ICinemasService cinemasService;
 
-        public CinemasController(ICinemasService cinemasService)
-        {
-            this.cinemasService = cinemasService;
-        }
+        //public CinemasController(ICinemasService cinemasService)
+        //{
+        //    this.cinemasService = cinemasService;
+        //}
 
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            try
-            {
-                return this.Ok(this.cinemasService.GetAllCinema());
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-            }
-        }
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    try
+        //    {
+        //        return this.Ok(this.cinemasService.GetAllCinema());
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
+        //    }
+        //}
 
-        [HttpGet("{id}")]
-        public IActionResult Get(string id)
-        {
-            try
-            {
-                return this.Ok(this.cinemasService.GetCinemaById(id));
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-            }
-        }
+        //[HttpGet("{id}")]
+        //public IActionResult Get(string id)
+        //{
+        //    try
+        //    {
+        //        return this.Ok(this.cinemasService.GetCinemaById(id));
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
+        //    }
+        //}
 
-        [HttpPost]
-        public IActionResult Post(Models.Cinema cinema)
-        {
-            try
-            {
-                return this.Ok(this.cinemasService.AddCinema(cinema));
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-            }
-        }
+        //[HttpPost]
+        //public IActionResult Post(Cinema_Server.Models.Cinema cinema)
+        //{
+        //    try
+        //    {
+        //        return this.Ok(this.cinemasService.AddCinema(cinema));
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
+        //    }
+        //}
 
-        [HttpPut("{id}")]
-        public IActionResult Put(string id, Models.Cinema cinema)
-        {
-            try
-            {
-                return this.Ok(this.cinemasService.UpdateCinema(id, cinema));
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-            }
-        }
+        //[HttpPut("{id}")]
+        //public IActionResult Put(string id, Cinema_Server.Models.Cinema cinema)
+        //{
+        //    try
+        //    {
+        //        return this.Ok(this.cinemasService.UpdateCinema(id, cinema));
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
+        //    }
+        //}
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
-        {
-            try
-            {
-                this.cinemasService.DeleteCinema(id);
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete(string id)
+        //{
+        //    try
+        //    {
+        //        this.cinemasService.DeleteCinema(id);
 
-                return this.Ok("Le cinema à bien était supprimer");
-            }
-            catch (Exception e)
-            {
-                return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-            }
-        }
+        //        return this.Ok("Le cinema à bien était supprimer");
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
+        //    }
+        //}
     }
 }

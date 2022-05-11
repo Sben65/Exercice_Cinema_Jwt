@@ -1,5 +1,5 @@
-﻿using Cinema_Server.Repositories;
-using Server.Cinema.Models;
+﻿using Cinema_Server.Models;
+using Cinema_Server.Repositories;
 
 namespace Cinema_Server.Services
 {

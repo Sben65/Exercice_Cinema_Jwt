@@ -1,7 +1,7 @@
-﻿using Cinema_Server.Services;
+﻿using Cinema_Server.Models;
+using Cinema_Server.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Server.Cinema.Models;
 
 namespace Cinema_Server.Controllers
 {
@@ -22,7 +22,7 @@ namespace Cinema_Server.Controllers
             return this.Ok(this.usersService.GetUserById(Id));
         }
 
-        [HttpPost("{user}")]
+        [HttpPost]
         public IActionResult Post(User user)
         {
             return this.Ok(this.usersService.CreateUser(user));

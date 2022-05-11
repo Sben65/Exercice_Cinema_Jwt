@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cinema_Server.Models;
 using Server.Cinema.Interfaces;
-using Server.Cinema.Models;
 
 namespace Server.Cinema.Repositories
 {

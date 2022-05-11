@@ -20,9 +20,9 @@ namespace Server.Cinema.Services
         /// lève une exception si elle n'en trouve pas.
         /// </summary>
         /// <returns>List de cinema.</returns>
-        public List<Models.Cinema> GetAllCinema()
+        public List<Cinema_Server.Models.Cinema> GetAllCinema()
         {
-            List<Models.Cinema> cinemas = this.cinemasRepository.FindAll();
+            List<Cinema_Server.Models.Cinema> cinemas = this.cinemasRepository.FindAll();
 
             if (cinemas == null)
             {
@@ -38,9 +38,9 @@ namespace Server.Cinema.Services
         /// </summary>
         /// <param name="id">id du cinema.</param>
         /// <returns>Cinema.</returns>
-        public Models.Cinema GetCinemaById(string id)
+        public Cinema_Server.Models.Cinema GetCinemaById(string id)
         {
-            Models.Cinema cinema = this.cinemasRepository.FindById(id);
+            Cinema_Server.Models.Cinema cinema = this.cinemasRepository.FindById(id);
 
             if (cinema == null)
             {
@@ -55,7 +55,7 @@ namespace Server.Cinema.Services
         /// </summary>
         /// <param name="cinema">nouveau cinema.</param>
         /// <returns>nouveau cinema.</returns>
-        public Models.Cinema AddCinema(Models.Cinema cinema)
+        public Cinema_Server.Models.Cinema AddCinema(Cinema_Server.Models.Cinema cinema)
         {
             if (cinema.Nom == null)
             {
@@ -73,7 +73,7 @@ namespace Server.Cinema.Services
         /// <param name="id">id du cinema.</param>
         /// <param name="cinema">les nouvelle donnée du cinema.</param>
         /// <returns>cinema mis à jour.</returns>
-        public Models.Cinema UpdateCinema(string id, Models.Cinema cinema)
+        public Cinema_Server.Models.Cinema UpdateCinema(string id, Cinema_Server.Models.Cinema cinema)
         {
             if (cinema.Nom == null)
             {
