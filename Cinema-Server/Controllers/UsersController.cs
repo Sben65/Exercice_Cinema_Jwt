@@ -22,6 +22,12 @@ namespace Cinema_Server.Controllers
             return this.Ok(this.usersService.GetUserById(Id));
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return this.Ok(this.usersService.GetAllUsers());
+        }
+
         [HttpPost]
         public IActionResult Post(User user)
         {

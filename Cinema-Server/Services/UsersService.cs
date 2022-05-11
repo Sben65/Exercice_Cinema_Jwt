@@ -12,6 +12,11 @@ namespace Cinema_Server.Services
             this.usersRepository = usersRepository;
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            return this.usersRepository.FindAll();
+        }
+
         public User GetUserById(int userId)
         {
             var user = this.usersRepository.Find(userId);
