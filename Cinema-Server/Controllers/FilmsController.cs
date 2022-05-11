@@ -13,28 +13,21 @@ namespace Server.Cinema.Controllers
     [ApiController]
     public class FilmsController : ControllerBase
     {
-        //private readonly IFilmsService filmsService;
-        //private readonly ISeancesService seancesService;
+        private readonly IFilmsService filmsService;
+        private readonly ISeancesService seancesService;
 
-        //public FilmsController(IFilmsService filmsService, ISeancesService seancesService)
-        //{
-        //    this.filmsService = filmsService;
-        //    this.seancesService = seancesService;
-        //}
+        public FilmsController(IFilmsService filmsService, ISeancesService seancesService)
+        {
+            this.filmsService = filmsService;
+            this.seancesService = seancesService;
+        }
 
-        //[HttpGet]
-        //public IActionResult GetAll()
-        //{
-        //    try
-        //    {
-        //        return this.Ok(this.filmsService.GetAllFilm());
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-        //    }
-        //}
-        
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return this.Ok(this.filmsService.GetAllFilm());
+        }
+
         //[HttpGet("cinema/{cinemaId}")]
         //public IActionResult GetAllByCinema(string cinemaId)
         //{
@@ -61,44 +54,23 @@ namespace Server.Cinema.Controllers
         //    }
         //}
 
-        //[HttpGet("{id}")]
-        //public IActionResult GetById(string id)
-        //{
-        //    try
-        //    {
-        //        return this.Ok(this.filmsService.GetFilmById(id));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-        //    }
-        //}
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return this.Ok(this.filmsService.GetFilmById(id));
+        }
 
-        //[HttpPost]
-        //public IActionResult Post(Film film)
-        //{
-        //    try
-        //    {
-        //        return this.Ok(this.filmsService.CreateFilm(film));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-        //    }
-        //}
+        [HttpPost]
+        public IActionResult Post(Film film)
+        {
+            return this.Ok(this.filmsService.CreateFilm(film));
+        }
 
-        //[HttpPut("{id}")]
-        //public IActionResult Put(string id, Film film)
-        //{
-        //    try
-        //    {
-        //        return this.Ok(this.filmsService.UpdateFilm(id, film));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-        //    }
-        //}
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Film film)
+        {
+            return this.Ok(this.filmsService.UpdateFilm(id, film));
+        }
 
         //[HttpDelete("{id}")]
         //public IActionResult Delete(string id)

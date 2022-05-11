@@ -9,9 +9,9 @@ namespace Server.Cinema.Interfaces
     public interface IFilmsService
     {
         List<Film> GetAllFilm();
-        Film GetFilmById(string id);
+        Film GetFilmById(int id);
         Film CreateFilm(Film film);
-        Film UpdateFilm(string id, Film film);
-        void DeleteFilm(string id);
+        Film UpdateFilm(int id, Film film);
+        void DeleteFilm(int id);
     }
 }

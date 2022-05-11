@@ -8,10 +8,10 @@ namespace Server.Cinema.Interfaces
 {
     public interface IFilmsRepository
     {
-        List<Film> FindAll();
-        Film FindById(string id);
+        IEnumerable<Film> FindAll();
+        Film FindById(int id);
         void Create(Film film);
-        void Update(string id, Film film);
-        void Delete(string id);
+        void Update(int id, Film film);
+        void Delete(int id);
     }
 }

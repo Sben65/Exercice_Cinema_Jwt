@@ -22,7 +22,7 @@ namespace Server.Cinema.Services
         /// <returns>Liste de film.</returns>
         public List<Film> GetAllFilm()
         {
-            List<Film> films = this.filmsRepository.FindAll();
+            List<Film> films = this.filmsRepository.FindAll().ToList();
 
             if (films == null)
             {
@@ -37,7 +37,7 @@ namespace Server.Cinema.Services
         /// </summary>
         /// <param name="id">l'id du film.</param>
         /// <returns>un Film.</returns>
-        public Film GetFilmById(string id)
+        public Film GetFilmById(int id)
         {
             Film film = this.filmsRepository.FindById(id);
 
@@ -72,7 +72,7 @@ namespace Server.Cinema.Services
         /// <param name="id">id du film.</param>
         /// <param name="film">le film.</param>
         /// <returns>le film mis à jour.</returns>
-        public Film UpdateFilm(string id, Film film)
+        public Film UpdateFilm(int id, Film film)
         {
             if (film.Nom == null)
             {
@@ -88,7 +88,7 @@ namespace Server.Cinema.Services
         /// Cette fonction supprime un film.
         /// </summary>
         /// <param name="id">id du film.</param>
-        public void DeleteFilm(string id)
+        public void DeleteFilm(int id)
         {
             this.filmsRepository.Delete(id);
         }
