@@ -1,4 +1,5 @@
 ﻿using Cinema_Server.Models;
+using Cinema_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,6 +14,13 @@ namespace Cinema_Server.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly UsersService usersService;
+
+        public AuthController(UsersService usersService)
+        {
+            this.usersService = usersService;
+        }
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] User user)
         {
@@ -20,7 +28,9 @@ namespace Cinema_Server.Controllers
             {
                 return BadRequest("Invalid Request");
             }
-            if ((user.Username == "test" || user.Username == "string01") && (user.Password == "passtest" || user.Password == "string01"))
+            var currentUser = this.usersService.GetAllUsers().FirstOrDefault(x => x.Username == user.Username && x.Password == user.Password);
+
+            if (currentUser != null)
             {
                 List<Claim> claims = new List<Claim>
                 {

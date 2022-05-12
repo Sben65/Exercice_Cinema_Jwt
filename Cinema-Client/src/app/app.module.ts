@@ -10,6 +10,7 @@ import { UsersComponent } from './users/users.component';
 import { ListFilmComponent } from './list-film/list-film.component';
 import { FilmComponent } from './film/film.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './register/register.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -22,7 +23,8 @@ export function tokenGetter() {
     UsersComponent,
     ListFilmComponent,
     FilmComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

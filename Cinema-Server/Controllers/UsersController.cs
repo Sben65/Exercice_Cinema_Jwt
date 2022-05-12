@@ -22,6 +22,12 @@ namespace Cinema_Server.Controllers
             return this.Ok(this.usersService.GetUserById(Id));
         }
 
+        [HttpGet("username/{username}")]
+        public IActionResult GetByUsername(string username)
+        {
+            return this.Ok(this.usersService.GetUserByUsername(username));
+        }
+
         [HttpGet]
         public IActionResult Get()
         {

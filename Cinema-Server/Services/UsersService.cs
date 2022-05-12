@@ -23,6 +23,13 @@ namespace Cinema_Server.Services
 
             return user;
         }
+        
+        public User GetUserByUsername(string username)
+        {
+            var user = this.usersRepository.FindAll().FirstOrDefault(x => x.Username == username);
+
+            return user;
+        }
 
         public User CreateUser(User user)
         {
