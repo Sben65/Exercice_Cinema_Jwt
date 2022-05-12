@@ -1,6 +1,6 @@
 export class Film {
     
-    id:string;
+    id:number;
     nom: string;
     duree: number;
     imgUrl: string;

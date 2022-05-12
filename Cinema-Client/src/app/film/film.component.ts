@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Film } from '../models';
 
 @Component({
@@ -10,7 +11,7 @@ export class FilmComponent implements OnInit {
   @Input() film: Film;
   seances : any[];
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,10 @@ export class FilmComponent implements OnInit {
     // .subscribe(data => {
     //   this.seances = data;
     // })
+  }
+
+  RedirectToDetail(id: number){
+    this.router.navigate([`film/${id}`]);
   }
 
 }

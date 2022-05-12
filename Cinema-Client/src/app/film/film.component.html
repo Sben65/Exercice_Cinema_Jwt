@@ -4,12 +4,12 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">{{film.nom}}</h5>
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" (click)="openDialog()">voir les séances</button>
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" (click)="RedirectToDetail(film.id)">détail</button>
     </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -24,7 +24,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">numero de la salle : {{seance.salle.numero}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">nom du film : {{seance.film.nom}}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">Cinéma : {{seance.cinema.nom}}</h6>
-                        <button type="button" class="btn btn-primary">réserver une séance</button>
+                        <button type="button" class="btn btn-primary">Détail</button>
                     </div>
                 </div>
             </div>
@@ -33,4 +33,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

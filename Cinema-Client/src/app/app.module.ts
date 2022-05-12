@@ -12,6 +12,7 @@ import { FilmComponent } from './film/film.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetailFilmComponent } from './detail-film/detail-film.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -25,7 +26,8 @@ export function tokenGetter() {
     ListFilmComponent,
     FilmComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    DetailFilmComponent
   ],
   imports: [
     BrowserModule,
