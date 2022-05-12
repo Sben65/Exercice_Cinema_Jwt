@@ -6,6 +6,6 @@ export class Film {
     imgUrl: string;
 
     constructor() {
-        
+
     }
 }
