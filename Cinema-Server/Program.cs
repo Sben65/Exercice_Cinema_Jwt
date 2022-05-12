@@ -1,3 +1,4 @@
+using Cinema_Server.Interfaces;
 using Cinema_Server.Models;
 using Cinema_Server.Repositories;
 using Cinema_Server.Services;
@@ -61,6 +62,7 @@ builder.Services.AddTransient<ISallesRepository, SallesRepository>();
 builder.Services.AddTransient<IFilmsRepository, FilmsRepository>();
 builder.Services.AddTransient<ISeancesRepository, SeancesRepository>();
 builder.Services.AddTransient<UsersRepository, UsersRepository>();
+builder.Services.AddTransient<ITicketsRepository, TicketsRepository>();
 
 // SERVICES
 builder.Services.AddTransient<UsersService, UsersService>();
@@ -68,6 +70,7 @@ builder.Services.AddTransient<ICinemasService, CinemasService>();
 builder.Services.AddTransient<ISallesService, SallesService>();
 builder.Services.AddTransient<IFilmsService, FilmsService>();
 builder.Services.AddTransient<ISeancesService, SeancesService>();
+builder.Services.AddTransient<ITicketsService, TicketsService>();
 
 //Donot forgot to add ConnectionStrings as "dbConnection" to the appsetting.json file
 //builder.Services.AddDbContext<DatabaseContext>
