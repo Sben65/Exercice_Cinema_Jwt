@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './guard/auth.guard';
 import { LoginModule } from './modules/login/login.module';
 import { UsersComponent } from './users/users.component';
+import { ListFilmComponent } from './list-film/list-film.component';
+import { FilmComponent } from './film/film.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -16,7 +19,10 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     AccueilComponent,
-    UsersComponent
+    UsersComponent,
+    ListFilmComponent,
+    FilmComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
