@@ -1,0 +1,11 @@
+<div class="container">
+    <!-- <select class="form-select" name="cinema" (change)="redirecToCinema()">
+        <option selected value="{{currentCinema.id}}">{{currentCinema.nom}}</option>
+        <option *ngFor="let cinema of cinemas" value="{{cinema.id}}">{{cinema.nom}}</option>
+    </select> -->
+    <div class="container-fluid">
+        <ng-container *ngFor="let film of films">
+            <app-film [film]="film"></app-film>
+        </ng-container>
+    </div>
+</div>

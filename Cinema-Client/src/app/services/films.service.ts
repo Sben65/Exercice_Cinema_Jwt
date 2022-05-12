@@ -1,16 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Film } from '../models/film';
+import { environment } from 'src/environments/environment';
+import { Film } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmsService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  findAll() : Observable<Film[]>{
-    return this.http.get<Film[]>("https://localhost:7061/api/users");
+  getAllFilm() : Observable<Film[]>{
+    return this.http.get<Film[]>(`${environment.apiUrl}/films`);
+  }
+
+  getFilmById(id : string) : Observable<Film>{
+    return this.http.get<Film>(`${environment.apiUrl}/films/${id}`);
+  }
+  
+  getFilmByCinema(id : string) : Observable<Film[]>{
+    return this.http.get<Film[]>(`${environment.apiUrl}/films/cinema/${id}`);
   }
 }
