@@ -20,7 +20,7 @@ namespace Cinema_Server.Controllers
             {
                 return BadRequest("Invalid Request");
             }
-            if ((user.Username == "admin" || user.Username == "thomas") && user.Password == "azerty")
+            if ((user.Username == "test" || user.Username == "string01") && (user.Password == "passtest" || user.Password == "string01"))
             {
                 List<Claim> claims = new List<Claim>
                 {
@@ -34,7 +34,7 @@ namespace Cinema_Server.Controllers
                 {
                     claims.Add(new Claim(ClaimTypes.Role, "BasicUser"));
                 };
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ma cle secrete"));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ma cle super secrete"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                 var tokenOptions = new JwtSecurityToken(
                     issuer: "http://localhost:7061",
