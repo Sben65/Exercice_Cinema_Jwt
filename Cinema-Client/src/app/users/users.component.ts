@@ -13,12 +13,11 @@ export class UsersComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.users = ["Ben", "Stevie"]
-    //this.http.get("https://localhost:7036/api/users")
-      // .subscribe({
-      //   next: (res: any) => this.users = res,
-      //   error: (err: HttpErrorResponse) => console.log(err)
-      // })
+    this.http.get("https://localhost:7061/api/users")
+      .subscribe({
+        next: (res: any) => this.users = res,
+        error: (err: HttpErrorResponse) => console.log(err)
+      })
   }
 
 }
