@@ -72,18 +72,11 @@ namespace Server.Cinema.Controllers
             return this.Ok(this.filmsService.UpdateFilm(id, film));
         }
 
-        //[HttpDelete("{id}")]
-        //public IActionResult Delete(string id)
-        //{
-        //    try
-        //    {
-        //        this.filmsService.DeleteFilm(id);
-        //        return this.Ok("Le film à bien était supprimé.");
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return this.StatusCode(StatusCodes.Status400BadRequest, e.Message);
-        //    }
-        //}
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            this.filmsService.DeleteFilm(id);
+            return this.Ok("Le film à bien était supprimé.");
+        }
     }
 }
