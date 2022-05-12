@@ -36,7 +36,6 @@ export class AuthService {
         next: (res: AuthenticatedResponse) => {
           const token = res.token;
           localStorage.setItem("jwt", token);
-          // this.invalidLogin = false;
           this.userService.getUserById(userCredential.username).subscribe(data =>{
             localStorage.setItem('currentUser', JSON.stringify(data))
           });
@@ -48,7 +47,8 @@ export class AuthService {
   }
 
   logout(): void {
-    sessionStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('jwt');
     this.currentUserSubject.next(null);
     this.router.navigate(['/login']);
   }

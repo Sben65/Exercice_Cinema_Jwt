@@ -11,6 +11,7 @@ import { ListFilmComponent } from './list-film/list-film.component';
 import { FilmComponent } from './film/film.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -36,7 +37,8 @@ export function tokenGetter() {
       }
     }),
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    NgbModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
